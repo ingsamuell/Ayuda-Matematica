@@ -122,3 +122,33 @@ footer {
     margin: 0 10px;
     text-decoration: none;
 }
+
+.dropdown {
+    display: block;
+    margin-top: 10px;
+    background-color: #ECF0F1; /* Fondo del dropdown */
+    border: 1px solid #2C3E50; /* Borde del dropdown */
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    max-height: 0;
+}
+
+.dropdown a {
+    display: block;
+    padding: 10px 15px;
+    color: #2C3E50; /* Color del texto */
+    text-decoration: none;
+    border-bottom: 1px solid #2C3E50; /* Borde inferior de cada enlace */
+    transition: background-color 0.3s ease;
+}
+
+.dropdown a:hover {
+    background-color: #3498DB; /* Fondo al pasar el ratón */
+    color: #ECF0F1; /* Color del texto al pasar el ratón */
+}
+
+.dropdown.show {
+    max-height: 500px; /* Ajusta según la cantidad de enlaces */
+}
