@@ -3,8 +3,8 @@
 
 document.addEventListener('DOMContentLoaded', function() {
     // Limpia todos los comentarios y los ids propios (solo para reiniciar la página)
-    // localStorage.removeItem('comentariosComunidad');
-    // localStorage.removeItem('misComentariosComunidad');
+    localStorage.removeItem('comentariosComunidad');
+    localStorage.removeItem('misComentariosComunidad');
     const form = document.getElementById('comentario-form');
     const lista = document.getElementById('comentarios-lista');
 
