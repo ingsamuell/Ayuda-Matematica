@@ -3,8 +3,8 @@
 
 document.addEventListener('DOMContentLoaded', function() {
     // Limpia todos los comentarios y los ids propios (solo para reiniciar la página)
-     localStorage.removeItem('comentariosComunidad');
-     localStorage.removeItem('misComentariosComunidad');
+    // localStorage.removeItem('comentariosComunidad');
+    // localStorage.removeItem('misComentariosComunidad');
     const form = document.getElementById('comentario-form');
     const lista = document.getElementById('comentarios-lista');
 
@@ -24,8 +24,8 @@ document.addEventListener('DOMContentLoaded', function() {
         const nuevoComentario = { id, usuario, mensaje };
         comentarios.push(nuevoComentario);
         misIds.push(id);
-        // localStorage.setItem('comentariosComunidad', JSON.stringify(comentarios));
-        // localStorage.setItem('misComentariosComunidad', JSON.stringify(misIds));
+        localStorage.setItem('comentariosComunidad', JSON.stringify(comentarios));
+        localStorage.setItem('misComentariosComunidad', JSON.stringify(misIds));
         form.reset();
         renderComentarios();
     });
