@@ -3,77 +3,143 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #ECF0F2;
-    /* Fondo */
-    color: #2C3E50;
-    /* Texto */
+    background-color: #EAF1FB; /* Azul claro */
+    color: #223A5E; /* Azul oscuro */
     overflow-x: hidden;
-    /* Evita el desplazamiento horizontal */
 }
+
 
 /* Header */
 header {
-    background-color: #2C3E50;
-    /* Primario */
-    color: #ECF0F1;
-    /* Fondo */
-    padding: 5px 20px;
+    background-color: #223A5E; /* Azul oscuro */
+    color: #FFFFFF;
+    padding: 0 24px;
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    height: 80px;
-    /* Fija la altura del header */
+    justify-content: space-between;
+    height: 72px;
+    box-shadow: 0 2px 8px rgba(44,62,80,0.08);
+    position: relative;
+    z-index: 10;
 }
 
 .logo {
-    height: 100%;
-    /* Asegura que el contenedor del logo ocupe toda la altura del header */
+    display: flex;
+    align-items: center;
+    height: 60px;
 }
 
 .logo img {
-    max-height: 100%;
-    /* Ajusta la altura máxima del logo al 100% del contenedor */
+    max-height: 48px;
+    width: auto;
+    margin-right: 10px;
 }
 
+
 nav {
-    flex-grow: 1;
     display: flex;
-    justify-content: center;
+    align-items: center;
+    gap: 32px;
 }
 
 nav a {
-    color: #ECF0F1;
-    /* Fondo */
+    color: #FFFFFF;
     text-decoration: none;
-    margin: 0 30px;
-    /* Aumenta la separación entre los botones */
+    font-weight: 500;
+    font-size: 1.1em;
+    padding: 8px 16px;
+    border-radius: 6px;
+    transition: background 0.2s, color 0.2s;
+}
+
+nav a:hover, nav a.active {
+    background: #2E8BC0; /* Azul acento */
+    color: #fff;
+}
+
+/* Botón hamburguesa para móvil */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-left: 16px;
+    z-index: 20;
+}
+.menu-toggle span {
+    height: 4px;
+    width: 28px;
+    background: #ECF0F1;
+    margin: 4px 0;
+    border-radius: 2px;
+    display: block;
+    transition: 0.3s;
+}
+
+@media (max-width: 800px) {
+    header {
+        flex-wrap: wrap;
+        height: auto;
+        padding: 0 10px;
+    }
+    nav {
+        position: absolute;
+        top: 72px;
+        left: 0;
+        width: 100%;
+        background: #2C3E50;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0;
+        padding: 0;
+        display: none;
+        box-shadow: 0 4px 12px rgba(44,62,80,0.10);
+    }
+    nav.open {
+        display: flex;
+    }
+    nav a {
+        width: 100%;
+        padding: 16px 24px;
+        border-radius: 0;
+        border-bottom: 1px solid #34495E;
+    }
+    .menu-toggle {
+        display: flex;
+    }
 }
 
 .auth-buttons .btn {
-    background: #E74C3C;
-    /* Botones */
-    color: #ECF0F1;
-    /* Fondo */
+    background: #2E8BC0; /* Azul acento */
+    color: #fff;
     padding: 8px 12px;
     border: none;
     cursor: pointer;
     border-radius: 5px;
     margin-left: 10px;
+    font-weight: 500;
+    transition: background 0.2s;
+}
+
+.auth-buttons .btn:hover {
+    background: #3A6EA5; /* Azul medio */
 }
 
 .auth-buttons .register {
-    background: #3498DB;
-    /* Enlaces */
-    color: #ECF0F1;
-    /* Fondo */
+    background: #3A6EA5; /* Azul medio */
+    color: #fff;
 }
 
 /* Sección de bienvenida */
+
 .welcome {
     text-align: center;
     padding: 50px 20px;
-    background-color: #ECF0F1;
-    /* Fondo */
+    background: none;
 }
 
 .welcome h1 {
@@ -86,50 +152,77 @@ nav a {
 }
 
 /* Secciones de Matemática */
+
 .matematica {
     padding: 20px;
-    background-color: #ffffff;
+    background-color: #fff;
     margin: 20px auto;
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 10px rgba(46,139,192,0.08);
     max-width: 800px;
+    border: 1px solid #BFD7ED;
 }
+
 
 .matematica h2 {
     margin-top: 0;
-    color: #2C3E50; /* Texto */
+    color: #223A5E; /* Azul oscuro */
     text-align: center;
-
 }
+
 
 .matematica p {
-    color: #2C3E50; /* Texto */
+    color: #3A6EA5; /* Azul medio */
 }
+
 
 /* Footer */
 footer {
-    background-color: #2C3E50; /* Primario */
-    color: #ECF0F1;/* Fondo */
+    background-color: #223A5E; /* Azul oscuro */
+    color: #fff;
     text-align: center;
-    padding: 20px;
-    width: 100%;
-    margin-top: auto;/* Empuja el footer al final del contenedor flex */
+    padding: 20px 0 10px 0;
+    width: 100vw;
+    min-height: 60px;
+    position: relative;
+    bottom: 0;
+    left: 0;
+    margin-top: 40px;
 }
 
+html, body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1 0 auto;
+}
+
+
 .social-links a {
-    color: #ECF0F1;
-    /* Fondo */
+    color: #2E8BC0;
     margin: 0 10px;
     text-decoration: none;
+    transition: color 0.2s;
 }
+.social-links a:hover {
+    color: #3A6EA5;
+}
+
 
 .dropdown {
     display: block;
     margin-top: 10px;
-    background-color: #ECF0F1; /* Fondo del dropdown */
-    border: 1px solid #2C3E50; /* Borde del dropdown */
+    background-color: #EAF1FB; /* Azul claro */
+    border: 1px solid #2E8BC0; /* Azul acento */
     border-radius: 5px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(46,139,192,0.10);
     overflow: hidden;
     transition: max-height 0.3s ease-out;
     max-height: 0;
@@ -138,15 +231,15 @@ footer {
 .dropdown a {
     display: block;
     padding: 10px 15px;
-    color: #2C3E50; /* Color del texto */
+    color: #223A5E; /* Azul oscuro */
     text-decoration: none;
-    border-bottom: 1px solid #2C3E50; /* Borde inferior de cada enlace */
-    transition: background-color 0.3s ease;
+    border-bottom: 1px solid #BFD7ED; /* Gris claro azulado */
+    transition: background-color 0.3s, color 0.3s;
 }
 
 .dropdown a:hover {
-    background-color: #3498DB; /* Fondo al pasar el ratón */
-    color: #ECF0F1; /* Color del texto al pasar el ratón */
+    background-color: #2E8BC0; /* Azul acento */
+    color: #fff;
 }
 
 .dropdown.show {
